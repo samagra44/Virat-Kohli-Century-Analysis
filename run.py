@@ -7,9 +7,9 @@ import plotly.graph_objects as go
 # categorical Data = ['Out/Not Out', 'Against', 'Venue', 'Column1', 'H/A', 'Date', 'Result','Format', 'Man of the Match', 'Captain']
 
 # numerical_Data = ['Score', 'Batting Order', 'Inn.']
-st.set_page_config(layout='wide')
+# st.set_page_config(layout='wide')
 image = "371321.jpg"
-
+st.set_page_config(page_title="Virat Kohli Century Analysis 🏏", page_icon=":bar_chart:", layout="wide")
 st.title("Virat Kohli Century Analysis 🏏")
 uploaded_file = st.file_uploader("Upoad the File",type=['csv','xlsx'])
 if uploaded_file is not None:
@@ -107,8 +107,18 @@ st.plotly_chart(fig)
 
 
 st.title("Violin Chart")
-select_categorical = st.selectbox('select cat data',df.select_dtypes(include='object').columns)
-select_numerical = st.selectbox('select num data',df.select_dtypes(include='number').columns)
+col_x_, col_y_ = st.columns(2)
+select_categorical = col_x_.selectbox('select cat data',df.select_dtypes(include='object').columns)
+select_numerical = col_y_.selectbox('select num data',df.select_dtypes(include='number').columns)
 fig = px.violin(df,x=select_categorical,y=select_numerical,box=True,points='all',
                 title=f"Violin Plot: {select_numerical} by {select_categorical}")
 st.plotly_chart(fig)
+
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
