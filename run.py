@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
+import seaborn as sns
 # categorical Data = ['Out/Not Out', 'Against', 'Venue', 'Column1', 'H/A', 'Date', 'Result','Format', 'Man of the Match', 'Captain']
 
 # numerical_Data = ['Score', 'Batting Order', 'Inn.']
@@ -57,3 +58,9 @@ for col in selected_columns_pie_chart:
     if col in ['Score', 'Batting Order', 'Inn.']:
         fig = px.pie(df,values=col,title=f"Pie chart for {col}")
         st.plotly_chart(fig)
+
+st.title('Count Plot')
+selected_categorical_columns = st.multiselect("Select categorical columns for count plots", [col for col in df.columns if col not in ['Score', 'Batting Order', 'Inn.']])
+for col in selected_categorical_columns:
+    fig = px.histogram(df, x=col, title=f'Count Plot for {col}')
+    st.plotly_chart(fig)
