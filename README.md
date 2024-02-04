@@ -50,4 +50,8 @@ To run the project locally, follow these steps:
 - Pandas for data manipulation and analysis
 
 # Output:
-![Virat Kohli Century Analysis 🏏 - Brave 2024-02-04 23-10-26](https://github.com/samagra44/Virat-Kohli-Century-Analysis/assets/77968722/0e5e4d4c-ecc0-4de7-8ef8-ef2a0d49da98)
+
+<p align="center">
+<img src="https://github.com/samagra44/Virat-Kohli-Century-Analysis/assets/77968722/0e5e4d4c-ecc0-4de7-8ef8-ef2a0d49da98" width=700 height=300 alt="animated"/>
+</p>
+
