@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 
 # numerical_Data = ['Score', 'Batting Order', 'Inn.']
 # st.set_page_config(layout='wide')
-image = "371321.jpg"
+image = "Virat_Kohli.jpg"
 st.set_page_config(page_title="Virat Kohli Century Analysis 🏏", page_icon=":bar_chart:", layout="wide")
 st.title("Virat Kohli Century Analysis 🏏")
 uploaded_file = st.file_uploader("Upoad the File",type=['csv','xlsx'])
